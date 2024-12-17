@@ -23,7 +23,7 @@ If a current cluster overlaps with multiple previous clusters, it is considered 
 
 A new name is assigned to the merged cluster.
 
-[merge image](docs/merge_case.PNG)
+![merge image](docs/merge_case.PNG)
 
 2. Split Case:
 
@@ -31,7 +31,7 @@ If multiple current clusters overlap with a single previous cluster, it is consi
 
 New names are assigned to each split cluster.
 
-[split image](docs/split.PNG)
+![split image](docs/split.PNG)
 
 3. Entirely New Cluster Case:
 
@@ -39,10 +39,10 @@ If a current cluster contains only new samples and no overlap with previous clus
 
 A new name is assigned to the cluster.
 
-[entire new image](docs/entire_new.PNG)
+![entire new image](docs/entire_new.PNG)
 
 4. Consistent Naming Case:
 
 If a current cluster overlaps with only one previous cluster, including both shared and new samples, the previous name is retained.
 
-[consistent naming image](docs/consitent_name.PNG)
+![consistent naming image](docs/consitent_name.PNG)
