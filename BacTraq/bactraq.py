@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-''' A pun on "backtrack," with a bacterial and historical twist.
-'''
-
 import os, sys
 import pandas as pd
 import numpy as np
@@ -14,8 +11,6 @@ from datetime import datetime
 import warnings
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
-
-_CLONALCOMPLEX_CLUSTER_DBs = '/shigella/cc_cluster_dbs/' # TO DO: update the cluster database path
 
 _DEFAULT_THRESHOLD = [20, 10, 5]
 

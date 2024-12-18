@@ -46,3 +46,5 @@ A new name is assigned to the cluster.
 If a current cluster overlaps with only one previous cluster, including both shared and new samples, the previous name is retained.
 
 ![consistent naming image](docs/consitent_name.PNG)
+
+Click here for full image [full result image](docs/bactraq_result.png)
