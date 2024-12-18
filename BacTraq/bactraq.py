@@ -370,7 +370,7 @@ def main():
 
     rename_with_db, new_db = assign_cluster_database(this_run_cluster, cluster_db=db_cluster)
 
-    pretty_name_save(rename_with_db, distance_matrix, args.output)
+    pretty_name_save(rename_with_db, distance_matrix, save_name)
     new_db.to_parquet(f'{today}_cluster_history.parquet.gz', compression='gzip')
     print(f"New history cluster is created for this run and saved in `{today}_cluster.parquet.gz` ")
 
