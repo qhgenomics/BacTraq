@@ -324,7 +324,7 @@ def assign_cluster_database(data: pd.DataFrame, cluster_db: pd.DataFrame):
                 #update them to new table
                 replace_dict = overlap_cluster_.loc[:, (f'{snp_d[t]}_name_upd',)].to_dict()
                 df.loc[:, snp_d[t]:] = df.loc[:, snp_d[t]:].apply(upd_name_from_db, args=([replace_dict, t]), axis=1)
-                overlap_cluster_.to_csv(f"{snp_d[t]}_cc152_pipeline.csv")
+                # overlap_cluster_.to_csv(f"{snp_d[t]}_cc152_pipeline.csv")
             else:
                 print(f"no record of {snp_d[t]} cluster in history_input")
     
@@ -346,8 +346,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("snpdist_matrix", help="Enter the path to SNPdist matrix.")
     parser.add_argument("output", help="Save name file. Current support csv save file")
-    parser.add_argument("-t", "--threshold",  help="Enter your list of threshold. E.g: --threshold 20,10,5. Default: 20,10,5")
-    parser.add_argument("--history",  help="Enter the path to previous/databases clusters to match name. This should include sample id and clusters at chosen thresholds. If empty then will have this run as history.")
+    parser.add_argument("-t", "--threshold",  help="Enter your list of threshold. E.g: --threshold 20,10,5.\nDefault: 20,10,5")
+    parser.add_argument("--history",  help="Enter the path to previous/databases clusters history parquet file. You can run `bactraq-history` with the previous cluster table to generate this file.\nIf empty, will perform clustering analysis only.")
     args = parser.parse_args()
 
     distance_matrix = args.snpdist_matrix
@@ -371,8 +371,13 @@ def main():
     rename_with_db, new_db = assign_cluster_database(this_run_cluster, cluster_db=db_cluster)
 
     pretty_name_save(rename_with_db, distance_matrix, save_name)
-    new_db.to_parquet(f'{today}_cluster_history.parquet.gz', compression='gzip')
-    print(f"New history cluster is created for this run and saved in `{today}_cluster.parquet.gz` ")
+
+    # save this run as history
+    save_path = os.path.dirname(save_name)
+    base_name = os.path.basename(distance_matrix)
+    new_history_file = f'{save_path}/{today}_{base_name}_history.parquet.gz'
+    new_db.to_parquet(new_history_file, compression='gzip')
+    print(f"History cluster of this run is created and saved in `{new_history_file}`")
 
 if __name__=="__main__":
     main()
