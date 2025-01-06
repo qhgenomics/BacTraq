@@ -374,10 +374,12 @@ def main():
 
     # save this run as history
     save_path = os.path.dirname(save_name)
-    base_name = os.path.basename(distance_matrix)
-    new_history_file = f'{save_path}/{today}_{base_name}_history.parquet.gz'
+    base_name = os.path.basename(save_name)
+    new_history_file = f'{today}_{base_name}_history.parquet.gz'
     new_db.to_parquet(new_history_file, compression='gzip')
+
     print(f"History cluster of this run is created and saved in `{new_history_file}`")
+
 
 if __name__=="__main__":
     main()
