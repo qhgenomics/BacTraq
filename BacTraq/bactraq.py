@@ -351,7 +351,7 @@ def main():
     args = parser.parse_args()
 
     distance_matrix = args.snpdist_matrix
-    save_name = args.output
+    save_name = f"{args.output}.csv"
     if args.threshold:
         snp_thres = args.threshold.split(',')
         snp_thres = list(map(int, snp_thres))
@@ -373,9 +373,7 @@ def main():
     pretty_name_save(rename_with_db, distance_matrix, save_name)
 
     # save this run as history
-    save_path = os.path.dirname(save_name)
-    base_name = os.path.basename(save_name)
-    new_history_file = f'{today}_{base_name}_history.parquet.gz'
+    new_history_file = f'{save_name}_history.parquet.gz'
     new_db.to_parquet(new_history_file, compression='gzip')
 
     print(f"History cluster of this run is created and saved in `{new_history_file}`")
