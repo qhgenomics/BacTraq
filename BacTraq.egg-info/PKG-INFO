@@ -5,9 +5,10 @@ Summary: A package for SNP distance clustering and consistent naming with previo
 Home-page: https://github.com/qhgenomics/BacTraq
 Author: Thuy Linh Nguyen
 Author-email: ThuyLinh.Nguyen@health.qld.gov.au
-License: UNKNOWN
-Platform: UNKNOWN
 Requires-Python: >=3.10
-
-UNKNOWN
-
+Requires-Dist: setuptools
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: treelib
+Requires-Dist: pyarrow
