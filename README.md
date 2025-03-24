@@ -131,5 +131,5 @@ If a current cluster overlaps with only one previous cluster, including both sha
 
 ![consistent naming image](docs/consitent_name.PNG)
 
-Click here for full image [full result image](docs/bactraq_result.png)
+Click here for full image [full result image](docs/bactraq_rename.png)
 
