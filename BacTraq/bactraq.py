@@ -373,7 +373,7 @@ def main():
     pretty_name_save(rename_with_db, distance_matrix, save_name)
 
     # save this run as history
-    new_history_file = f'{save_name}_history.parquet.gz'
+    new_history_file = f'{args.output}_history.parquet.gz'
     new_db.to_parquet(new_history_file, compression='gzip')
     print(f"History cluster of this run is created and saved in `{new_history_file}`")
 
