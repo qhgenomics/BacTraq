@@ -35,7 +35,7 @@ git clone https://github.com/qhgenomics/BacTraq.git
 
 ```bash
 cd BacTraq
-pip install dist/BacTraq-1.0.tar.gz
+pip install dist/bactraq-1.0.tar.gz
 ```
 
 The package will be installed with dependencies. 
