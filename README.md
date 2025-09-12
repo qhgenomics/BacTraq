@@ -85,10 +85,11 @@ Run `bactraq-history -h` for more information.
 Input format of `bactraq-history`:
 ```
 sample,20 SNPs,10 SNPs,5 SNPs
-SS24M02614,10,10.1,10.1.1
-SS24M02714,,,
-SS24M02786,8,8.1,8.1.1
-SS24M02806,8,8.1,8.1.1
+SS24M01,10,10.1,10.1.1
+SS24M02,,,
+SS24M03,8,8.1,8.1.1
+SS24M04,8,8.1,8.1.1
+SS24M05,8,8.1,
 ```
 
 Command:
@@ -102,6 +103,9 @@ History file: 20241108_cc152_history.parquet.gz
 ```
 
 ### Cluster Naming Rules
+> [!IMPORTANT]
+> The name structured is addarpted to PHM naming rule. If a sample is unclustered at a level, no number will be assigned to it for that level.
+> E.g. Sample1 cluster at 20 SNP with cluster number 1, but dont cluster at level 10 and 5 threhold, then the output is `sample1,1,,`. 
 
 BacTraq evaluates pairwise overlaps between current and previous clusters at each threshold level, applying the following rules:
 
