@@ -73,7 +73,7 @@ To run the package with clusters' name tracking you will need to input snp-dista
 ```bash 
 bactraq cc152_snp_dists.tsv 20241210_snp_cluster.csv -t 20,10,5 --history 20241108_cc152_cluster.parquet.gz
 ```
-### Input 
+### Input file
 
 Bactraq takes the default output format of snp-dists which is a **tab-separated** file.
 
@@ -81,6 +81,7 @@ Bactraq takes the default output format of snp-dists which is a **tab-separated*
 
 If you do not have history.parquet.gz file. You can run `bactraq-history` to generate one. Input is a table of cluster in comma separated format. 
 Run `bactraq-history -h` for more information.
+
 Input format of `bactraq-history`:
 ```
 sample,20 SNPs,10 SNPs,5 SNPs
