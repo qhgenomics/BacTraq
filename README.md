@@ -41,7 +41,6 @@ pip install dist/bactraq-1.0.tar.gz
 The package will be installed with dependencies. 
 
 >[!NOTE]
-> This is a private repo, therefore, it's is easiest if you log in as `qhgenomics` memeber and clone the entire repo in. Better solution will be figured out in the future.
 > After `pip install` you can remove `BacTraq` folder to save space.
 
 Run this command to see if the package is install:
@@ -74,11 +73,15 @@ To run the package with clusters' name tracking you will need to input snp-dista
 ```bash 
 bactraq cc152_snp_dists.tsv 20241210_snp_cluster.csv -t 20,10,5 --history 20241108_cc152_cluster.parquet.gz
 ```
+### Input 
+
+Bactraq takes the default output format of snp-dists which is a **tab-separated** file.
+
 ### History file:
 
 If you do not have history.parquet.gz file. You can run `bactraq-history` to generate one. Input is a table of cluster in comma separated format. 
 Run `bactraq-history -h` for more information.
-Input format:
+Input format of `bactraq-history`:
 ```
 sample,20 SNPs,10 SNPs,5 SNPs
 SS24M02614,10,10.1,10.1.1
