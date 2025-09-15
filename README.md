@@ -90,7 +90,7 @@ Input format of `bactraq-history`:
 ```
 sample,20 SNPs,10 SNPs,5 SNPs
 SS24M01,10,10.1,10.1.1
-SS24M02,10,10.2,10.2.1,
+SS24M02,10,10.2,10.2.1
 SS24M03,8,8.1,8.1.1
 SS24M04,8,8.1,8.1.1
 SS24M05,8,8.1,
