@@ -6,6 +6,10 @@ SNP-based clustering with consistent naming.
 
 BacTraq is a Python package designed to cluster, track and maintain consistent naming of clusters during SNP-based analysis. It compares clusters from the current sequencing run with those from previous analyses to determine whether clusters have remained the same or require new naming.
 
+> [!IMPORTANT]
+> The name structure is adapted to our in-house naming rule. If a sample is unclustered at a level, no number will be assigned to it for that level.
+> E.g. Sample1 clusters at 20 SNP with cluster number 1, but don't cluster at level 10 and 5 threhold, then the output is `sample1,1,,`
+
 ### Key Features
 
 - Cluster sequences based on their SNP distance gerenated by [SNP-dists](https://github.com/tseemann/snp-dists)
@@ -86,10 +90,11 @@ Input format of `bactraq-history`:
 ```
 sample,20 SNPs,10 SNPs,5 SNPs
 SS24M01,10,10.1,10.1.1
-SS24M02,,,
+SS24M02,10,10.2,10.2.1,
 SS24M03,8,8.1,8.1.1
 SS24M04,8,8.1,8.1.1
 SS24M05,8,8.1,
+...
 ```
 
 Command:
@@ -103,9 +108,6 @@ History file: 20241108_cc152_history.parquet.gz
 ```
 
 ### Cluster Naming Rules
-> [!IMPORTANT]
-> The name structure is adapted to our in-house naming rule. If a sample is unclustered at a level, no number will be assigned to it for that level.
-> E.g. Sample1 clusters at 20 SNP with cluster number 1, but don't cluster at level 10 and 5 threhold, then the output is `sample1,1,,`. 
 
 BacTraq evaluates pairwise overlaps between current and previous clusters at each threshold level, applying the following rules:
 
