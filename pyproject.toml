@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "BacTraq"
+version = "1.0.2"
+description = "A package for SNP distance clustering and consistent naming with previous cluster."
+readme = "README.md"
+authors = [
+  { name = "Thuy Linh Nguyen", email = "ThuyLinh.Nguyen@health.qld.gov.au" }
+]
+requires-python = ">=3.10"
+
+dependencies = [
+  "pandas",
+  "numpy",
+  "scikit-learn",
+  "treelib",
+  "pyarrow"
+]
+
+[project.urls]
+Homepage = "https://github.com/qhgenomics/BacTraq"
+
+[project.scripts]
+bactraq = "BacTraq.bactraq:main"
+bactraq-history = "BacTraq.history.makeHistory:main"

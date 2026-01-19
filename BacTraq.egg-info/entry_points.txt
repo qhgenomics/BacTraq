@@ -1,3 +1,0 @@
-[console_scripts]
-bactraq = BacTraq.bactraq:main
-bactraq-history = BacTraq.history.makeHistory:main

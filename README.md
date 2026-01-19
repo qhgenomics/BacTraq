@@ -39,7 +39,7 @@ git clone https://github.com/qhgenomics/BacTraq.git
 
 ```bash
 cd BacTraq
-pip install dist/bactraq-1.0.tar.gz
+pip pip install dist/*.whl
 ```
 
 The package will be installed with dependencies. 
@@ -55,7 +55,7 @@ bactraq --help
 
 Output: 
 ```bash
-usage: bactraq [-h] [-t THRESHOLD] [--history HISTORY] snpdist_matrix output
+usage: bactraq [-h] [-t THRESHOLD] [--history HISTORY] [--nRef] snpdist_matrix output
 
 positional arguments:
   snpdist_matrix        Enter the path to SNPdist matrix.
@@ -65,7 +65,8 @@ options:
   -h, --help            show this help message and exit
   -t THRESHOLD, --threshold THRESHOLD
                         Enter your list of threshold. E.g: --threshold 20,10,5. Default: 20,10,5
-  --history HISTORY     Enter the path to previous/databases clusters to match name. This should include sample id and clusters at chosen thresholds. If empty then will have this run as history.
+  --history HISTORY     Enter the path to previous/databases clusters history parquet file. You can run `bactraq-history` with the previous cluster table to generate this file. If empty, will perform clustering analysis only.
+  --nRef                No Reference sample in the SNP distance matrix.
 ```
 
 ## Basic usage
@@ -86,7 +87,7 @@ Bactraq takes the default output format of snp-dists which is a **tab-separated*
 If you do not have history.parquet.gz file. You can run `bactraq-history` to generate one. Input is a table of cluster in comma separated format. 
 Run `bactraq-history -h` for more information.
 
-Input format of `bactraq-history`:
+Input example of `bactraq-history`:
 ```
 sample,20 SNPs,10 SNPs,5 SNPs
 SS24M01,10,10.1,10.1.1
@@ -103,7 +104,7 @@ bactraq-history 20241108_cc152_cluster.csv -o 20241108_cc152_history -t 20,10,5
 ```
 
 Output:
-```bash 
+``` 
 History file: 20241108_cc152_history.parquet.gz
 ```
 

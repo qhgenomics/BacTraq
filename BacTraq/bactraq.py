@@ -99,7 +99,7 @@ def cluster_number_generate(df: pd.DataFrame, threshold: list) -> pd.DataFrame:
     cluster_name_df = pd.DataFrame(rename)    
     return cluster_name_df
 
-def cluster_from_distance_matrix(path: str, threshold: list) -> pd.DataFrame:
+def cluster_from_distance_matrix(path: str, threshold: list, ref_exist: bool) -> pd.DataFrame:
     ''' Read in input distance matrix and generate clustering based on threshold
     
     Parameters 
@@ -131,7 +131,7 @@ def cluster_from_distance_matrix(path: str, threshold: list) -> pd.DataFrame:
 
     dist_mx = pd.read_csv(path, sep='\t', header=0, index_col=0)
     dist_mx.index.name = 'sample'
-    if 'Reference' not in dist_mx.index:
+    if 'Reference' not in dist_mx.index and ref_exist:
         print("\033[91m {}\033[00m".format("Cannot find `Reference`. Make sure your SNPs dist matrix contains `Reference`"))
         sys.exit(1)
 
@@ -144,7 +144,8 @@ def cluster_from_distance_matrix(path: str, threshold: list) -> pd.DataFrame:
 
     cluster_df = pd.DataFrame(clusters_assigned, index=dist_mx.index)
     cluster_df = cluster_df + 1 # add 1 so cluster number starting at 1
-    cluster_df = cluster_df.drop(index='Reference')
+    if ref_exist:
+        cluster_df = cluster_df.drop(index='Reference')
     
     # re-assign number so that cluster with only one same won't be assign with any number
     cluster_number_reassign = cluster_number_generate(cluster_df, threshold)
@@ -348,6 +349,7 @@ def main():
     parser.add_argument("output", help="Save name file. Current support csv save file")
     parser.add_argument("-t", "--threshold",  help="Enter your list of threshold. E.g: --threshold 20,10,5.\nDefault: 20,10,5")
     parser.add_argument("--history",  help="Enter the path to previous/databases clusters history parquet file. You can run `bactraq-history` with the previous cluster table to generate this file.\nIf empty, will perform clustering analysis only.")
+    parser.add_argument("--nRef", help="No Reference sample in the SNP distance matrix.", action='store_false')
     args = parser.parse_args()
 
     distance_matrix = args.snpdist_matrix
@@ -366,7 +368,7 @@ def main():
     else: 
         db_cluster = None
     
-    this_run_cluster = cluster_from_distance_matrix(distance_matrix, snp_thres)
+    this_run_cluster = cluster_from_distance_matrix(distance_matrix, snp_thres, args.nRef)
 
     rename_with_db, new_db = assign_cluster_database(this_run_cluster, cluster_db=db_cluster)
 

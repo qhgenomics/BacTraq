@@ -48,9 +48,9 @@ def history_generate(path: str, thres_list: list, filename: str) -> None:
     print(f"History file: {filename}.parquet.gz")
 
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Generate history file from a previous cluster number, which can be used directly to log into Bactraq. The input file needs to be in comma separated format.")
     parser.add_argument("file", help="Enter the path to your old cluster table. The file needs to be in comma separated format")
-    parser.add_argument("-o", "--output", help="Save name file. Current support csv save file. If provided: `output.parquet.gz`, else: `inputfilename_history.parquet.gz")
+    parser.add_argument("-o", "--output", help="Save name file. If provided: `output.parquet.gz`, else: `inputfilename_history.parquet.gz")
     parser.add_argument("-t", "--threshold",  help="Enter your list of threshold. Make sure this match the column order in your cluster table. E.g: --threshold 20,10,5", required=True)
     
     args = parser.parse_args()

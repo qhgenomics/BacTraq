@@ -1,6 +1,0 @@
-setuptools
-pandas
-numpy
-scikit-learn
-treelib
-pyarrow
