@@ -39,7 +39,7 @@ git clone https://github.com/qhgenomics/BacTraq.git
 
 ```bash
 cd BacTraq
-pip pip install dist/*.whl
+pip install dist/*.whl
 ```
 
 The package will be installed with dependencies. 
