@@ -7,7 +7,11 @@ SNP-based clustering with consistent naming.
 BacTraq is a Python package designed to cluster, track and maintain consistent naming of clusters during SNP-based analysis. It compares clusters from the current sequencing run with those from previous analyses to determine whether clusters have remained the same or require new naming.
 
 > [!IMPORTANT]
-> The name structure is adapted to our in-house naming rule. If a sample is unclustered at a level, no number will be assigned to it for that level.
+> The name structure is adapted to our in-house naming rule.
+> With multiple threshold levels, the cluster name at X level is composed of all cluster numbers assigned to at the higher level. E.g: A sample is assigned cluster 1 at 20 level, cluster > 1 at 10 level and cluter 2 at 5 level, the input/output is:
+> |sample |20 SNPs|10 SNPs|5 SNPs|
+> |sample1|  1    |  1.1  | 1.1.2|
+> If a sample is unclustered at a level, no number will be assigned to it for that level.
 > E.g. Sample1 clusters at 20 SNP with cluster number 1, but don't cluster at level 10 and 5 threhold, then the output is `sample1,1,,`
 
 ### Key Features
