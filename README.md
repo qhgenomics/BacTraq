@@ -8,7 +8,7 @@ BacTraq is a Python package designed to cluster, track and maintain consistent n
 
 > [!IMPORTANT]
 > The name structure is adapted to our in-house naming rule.
-> With multiple threshold levels, the cluster name at X level is composed of all cluster numbers assigned to at the higher level. E.g: A sample is assigned cluster 1 at 20 level, cluster > 1 at 10 level and cluter 2 at 5 level, the input/output is:
+> With multiple threshold levels, the cluster name at X level is composed of all cluster numbers assigned to at the higher level. E.g: A sample is assigned cluster 1 at 20 level, cluster 1 at 10 level and cluter 2 at 5 level, the input/output is:
 > 
 > |sample |20 SNPs|10 SNPs|5 SNPs|
 > 
