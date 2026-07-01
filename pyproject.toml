@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "BacTraq"
-version = "1.0.2"
+version = "1.1.0-rc.1"
 description = "A package for SNP distance clustering and consistent naming with previous cluster."
 readme = "README.md"
 authors = [
@@ -25,4 +25,4 @@ Homepage = "https://github.com/qhgenomics/BacTraq"
 
 [project.scripts]
 bactraq = "BacTraq.bactraq:main"
-bactraq-history = "BacTraq.history.makeHistory:main"
+bactraq-history = "BacTraq.makeHistory:main"
