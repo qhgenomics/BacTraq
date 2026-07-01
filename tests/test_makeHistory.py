@@ -102,7 +102,6 @@ class TestHistoryGenerate:
         assert os.path.exists(f"{out_base}.parquet.gz")
 
     def test_parquet_contains_tuples(self, tmp_path):
-        import pandas as pd
         csv = str(tmp_path / "clusters.csv")
         self._write_csv(csv, "sample,col1,col2\ns1,1,1\ns2,1,2\n")
         out_base = str(tmp_path / "history")
@@ -114,7 +113,6 @@ class TestHistoryGenerate:
         assert tuple(val) == (1,) or val == (1,)
 
     def test_singleton_encoded_as_none(self, tmp_path):
-        import pandas as pd
         csv = str(tmp_path / "clusters.csv")
         # s2 has no sub-cluster (singleton at 10 SNP level)
         self._write_csv(csv, "sample,col1,col2\ns1,1,1\ns2,1,\n")

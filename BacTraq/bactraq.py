@@ -317,15 +317,23 @@ def _log_naming_events(overlap_df: pd.DataFrame, current_cluster_dict: dict,
                 )
 
             elif new_cluster != db_cluster:
-                # Consistent match but singletons joined, triggering a rename (bridged reclassification)
                 former_singletons = sorted(s for s in members if s in from_singleton)
-                logger.info(
-                    f"[{snp_col}] BRIDGED RECLASSIFICATION  "
-                    f"[{', '.join(former_singletons)}] (previously singleton) "
-                    f"joined cluster {get_name(db_cluster)}; "
-                    f"renamed: {get_name(db_cluster)} -> {new_name}; "
-                    f"all members: [{', '.join(members)}]"
-                )
+                if get_parent(new_cluster) != get_parent(db_cluster):
+                    # Parent cluster was renamed at a coarser threshold (merge/bridged cascade).
+                    logger.info(
+                        f"[{snp_col}] CASCADED RENAME  cluster {get_name(db_cluster)} "
+                        f"-> {new_name} (parent renamed at coarser threshold); "
+                        f"members: [{', '.join(members)}]"
+                    )
+                else:
+                    # Consistent match but singletons joined, triggering a rename (bridged reclassification)
+                    logger.info(
+                        f"[{snp_col}] BRIDGED RECLASSIFICATION  "
+                        f"[{', '.join(former_singletons)}] (previously singleton) "
+                        f"joined cluster {get_name(db_cluster)}; "
+                        f"renamed: {get_name(db_cluster)} -> {new_name}; "
+                        f"all members: [{', '.join(members)}]"
+                    )
 
             else:
                 # Name retained
@@ -371,6 +379,11 @@ def assign_cluster_from_db(row, snp_t, old_t, current_cluster_dict=None, singlet
                 current_samples = set(current_cluster_dict.get(node, []))
                 bridged = current_samples & singleton_samples
             if bridged:
+                new_cluster = increment_tuple_cluster(big_sis_info)
+                old_t.create_node(get_name(new_cluster), get_name(new_cluster), parent=parent, data=new_cluster)
+            elif get_parent(db_node_data) != parent:
+                # Parent was renamed at a coarser threshold (e.g. merge/bridged cascade).
+                # Fixing the stale history name whose prefix no longer matches.
                 new_cluster = increment_tuple_cluster(big_sis_info)
                 old_t.create_node(get_name(new_cluster), get_name(new_cluster), parent=parent, data=new_cluster)
             else:
