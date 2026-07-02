@@ -20,6 +20,9 @@ dependencies = [
   "pyarrow"
 ]
 
+[project.optional-dependencies]
+test = ["pytest"]
+
 [project.urls]
 Homepage = "https://github.com/qhgenomics/BacTraq"
 
