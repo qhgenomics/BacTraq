@@ -1,0 +1,13 @@
+,20 SNPs,20 SNPs,10 SNPs,10 SNPs,5 SNPs,5 SNPs,Members
+,Status,New Name,Status,New Name,Status,New Name,(5 SNPs)
+Old,,,,,,,
+1,Expanded,8,Renamed,8.1,Renamed,8.1.1,"s1, s2, s3"
+2,Merged,7,Renamed,7.1,Renamed,7.1.1,"s4, s5"
+3,Merged,7,Renamed,7.2,Renamed,7.2.1,"s6, s7"
+4,Split,12/9,Split,12.1/9.1,Split,12.1.1/9.1.1,"s8, s9 / n1, s10"
+5,Reduced,11,Reduced,11.1,Reduced,11.1.1,"s12, s13"
+6,Dissolved,-,Dissolved,-,Dissolved,-,-
+s11,Departed left 5,-,Departed left 5.1,-,Departed left 5.1.1,-,s11
+s14,Departed left 6,-,Departed left 6.1,-,Departed left 6.1.1,-,s14
+s15,Departed left 6,-,Departed left 6.1,-,Departed left 6.1.1,-,s15
+s16,Clustered,8,Singleton,-,Singleton,-,s16

@@ -28,3 +28,188 @@
 2026-07-01 15:25:13 [INFO] Clusters for current_snpdist.tsv saved to new_run_cluster.csv
 2026-07-01 15:25:13 [INFO] History updated and saved to new_run_cluster_history.parquet.gz
 2026-07-01 15:25:13 [INFO] Log saved to new_run_cluster_bactraq.log
+2026-07-02 08:47:51 [INFO] BacTraq run started — input: new_run_snpdist.tsv
+2026-07-02 08:47:51 [INFO] Thresholds: [20, 10, 5]
+2026-07-02 08:47:51 [INFO] History file: prev_history.parquet.gz
+2026-07-02 08:47:51 [INFO] Clustering complete — 20 samples
+2026-07-02 08:47:51 [INFO] [20 SNPs] MERGE  clusters [2, 3] -> new cluster 7; members: [s4, s5, s6, s7]
+2026-07-02 08:47:51 [INFO] [20 SNPs] BRIDGED RECLASSIFICATION  [s16] (previously singleton) joined cluster 1; renamed: 1 -> 8; all members: [s1, s16, s2, s3]
+2026-07-02 08:47:51 [INFO] [20 SNPs] SPLIT  cluster 4 (had [s10, s8, s9]) -> new cluster 9: [n1, s10]
+2026-07-02 08:47:51 [INFO] [20 SNPs] NEW  cluster 10: [n2, n3]
+2026-07-02 08:47:51 [INFO] [20 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5 and became singleton(s); remaining members [s12, s13] renamed: 5 -> 11
+2026-07-02 08:47:51 [INFO] [20 SNPs] SPLIT  cluster 4 (had [s10, s8, s9]) -> new cluster 12: [s8, s9]
+2026-07-02 08:47:51 [INFO] [20 SNPs] DISSOLVED  cluster 6: all members [s14, s15] became singletons
+2026-07-02 08:47:51 [INFO] [10 SNPs] CASCADED RENAME  cluster 2.1 -> 7.1 (parent renamed at coarser threshold); members: [s4, s5]
+2026-07-02 08:47:51 [INFO] [10 SNPs] CASCADED RENAME  cluster 3.1 -> 7.2 (parent renamed at coarser threshold); members: [s6, s7]
+2026-07-02 08:47:51 [INFO] [10 SNPs] CASCADED RENAME  cluster 1.1 -> 8.1 (parent renamed at coarser threshold); members: [s1, s2, s3]
+2026-07-02 08:47:51 [INFO] [10 SNPs] SPLIT  cluster 4.1 (had [s10, s8, s9]) -> new cluster 9.1: [n1, s10]
+2026-07-02 08:47:51 [INFO] [10 SNPs] NEW  cluster 10.1: [n2, n3]
+2026-07-02 08:47:51 [INFO] [10 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5.1 and became singleton(s); remaining members [s12, s13] renamed: 5.1 -> 11.1
+2026-07-02 08:47:51 [INFO] [10 SNPs] SPLIT  cluster 4.1 (had [s10, s8, s9]) -> new cluster 12.1: [s8, s9]
+2026-07-02 08:47:51 [INFO] [10 SNPs] DISSOLVED  cluster 6.1: all members [s14, s15] became singletons
+2026-07-02 08:47:51 [INFO] [5 SNPs] CASCADED RENAME  cluster 2.1.1 -> 7.1.1 (parent renamed at coarser threshold); members: [s4, s5]
+2026-07-02 08:47:51 [INFO] [5 SNPs] CASCADED RENAME  cluster 3.1.1 -> 7.2.1 (parent renamed at coarser threshold); members: [s6, s7]
+2026-07-02 08:47:51 [INFO] [5 SNPs] CASCADED RENAME  cluster 1.1.1 -> 8.1.1 (parent renamed at coarser threshold); members: [s1, s2, s3]
+2026-07-02 08:47:51 [INFO] [5 SNPs] SPLIT  cluster 4.1.1 (had [s10, s8, s9]) -> new cluster 9.1.1: [n1, s10]
+2026-07-02 08:47:51 [INFO] [5 SNPs] NEW  cluster 10.1.1: [n2, n3]
+2026-07-02 08:47:51 [INFO] [5 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5.1.1 and became singleton(s); remaining members [s12, s13] renamed: 5.1.1 -> 11.1.1
+2026-07-02 08:47:51 [INFO] [5 SNPs] SPLIT  cluster 4.1.1 (had [s10, s8, s9]) -> new cluster 12.1.1: [s8, s9]
+2026-07-02 08:47:51 [INFO] [5 SNPs] DISSOLVED  cluster 6.1.1: all members [s14, s15] became singletons
+2026-07-02 08:47:51 [INFO] Clusters for new_run_snpdist.tsv saved to new_run_cluster.csv
+2026-07-02 08:47:51 [INFO] History updated and saved to new_run_cluster_history.parquet.gz
+2026-07-02 08:47:51 [INFO] Log saved to new_run_cluster_bactraq.log
+2026-07-02 12:40:29 [INFO] BacTraq run started — input: new_run_snpdist.tsv
+2026-07-02 12:40:29 [INFO] Thresholds: [20, 10, 5]
+2026-07-02 12:40:29 [INFO] History file: prev_history.parquet.gz
+2026-07-02 12:40:29 [INFO] Clustering complete — 20 samples
+2026-07-02 12:40:29 [INFO] [20 SNPs] MERGE  clusters [2, 3] -> new cluster 7; members: [s4, s5, s6, s7]
+2026-07-02 12:40:29 [INFO] [20 SNPs] BRIDGED RECLASSIFICATION  [s16] (previously singleton) joined cluster 1; renamed: 1 -> 8; all members: [s1, s16, s2, s3]
+2026-07-02 12:40:29 [INFO] [20 SNPs] SPLIT  cluster 4 (had [s10, s8, s9]) -> new cluster 9: [n1, s10]
+2026-07-02 12:40:29 [INFO] [20 SNPs] NEW  cluster 10: [n2, n3]
+2026-07-02 12:40:29 [INFO] [20 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5 and became singleton(s); remaining members [s12, s13] renamed: 5 -> 11
+2026-07-02 12:40:29 [INFO] [20 SNPs] SPLIT  cluster 4 (had [s10, s8, s9]) -> new cluster 12: [s8, s9]
+2026-07-02 12:40:29 [INFO] [20 SNPs] DISSOLVED  cluster 6: all members [s14, s15] became singletons
+2026-07-02 12:40:29 [INFO] [10 SNPs] CASCADED RENAME  cluster 2.1 -> 7.1 (parent renamed at coarser threshold); members: [s4, s5]
+2026-07-02 12:40:29 [INFO] [10 SNPs] CASCADED RENAME  cluster 3.1 -> 7.2 (parent renamed at coarser threshold); members: [s6, s7]
+2026-07-02 12:40:29 [INFO] [10 SNPs] CASCADED RENAME  cluster 1.1 -> 8.1 (parent renamed at coarser threshold); members: [s1, s2, s3]
+2026-07-02 12:40:29 [INFO] [10 SNPs] SPLIT  cluster 4.1 (had [s10, s8, s9]) -> new cluster 9.1: [n1, s10]
+2026-07-02 12:40:29 [INFO] [10 SNPs] NEW  cluster 10.1: [n2, n3]
+2026-07-02 12:40:29 [INFO] [10 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5.1 and became singleton(s); remaining members [s12, s13] renamed: 5.1 -> 11.1
+2026-07-02 12:40:29 [INFO] [10 SNPs] SPLIT  cluster 4.1 (had [s10, s8, s9]) -> new cluster 12.1: [s8, s9]
+2026-07-02 12:40:29 [INFO] [10 SNPs] DISSOLVED  cluster 6.1: all members [s14, s15] became singletons
+2026-07-02 12:40:29 [INFO] [5 SNPs] CASCADED RENAME  cluster 2.1.1 -> 7.1.1 (parent renamed at coarser threshold); members: [s4, s5]
+2026-07-02 12:40:29 [INFO] [5 SNPs] CASCADED RENAME  cluster 3.1.1 -> 7.2.1 (parent renamed at coarser threshold); members: [s6, s7]
+2026-07-02 12:40:29 [INFO] [5 SNPs] CASCADED RENAME  cluster 1.1.1 -> 8.1.1 (parent renamed at coarser threshold); members: [s1, s2, s3]
+2026-07-02 12:40:29 [INFO] [5 SNPs] SPLIT  cluster 4.1.1 (had [s10, s8, s9]) -> new cluster 9.1.1: [n1, s10]
+2026-07-02 12:40:29 [INFO] [5 SNPs] NEW  cluster 10.1.1: [n2, n3]
+2026-07-02 12:40:29 [INFO] [5 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5.1.1 and became singleton(s); remaining members [s12, s13] renamed: 5.1.1 -> 11.1.1
+2026-07-02 12:40:29 [INFO] [5 SNPs] SPLIT  cluster 4.1.1 (had [s10, s8, s9]) -> new cluster 12.1.1: [s8, s9]
+2026-07-02 12:40:29 [INFO] [5 SNPs] DISSOLVED  cluster 6.1.1: all members [s14, s15] became singletons
+2026-07-02 12:40:29 [INFO] Clusters for new_run_snpdist.tsv saved to new_run_cluster.csv
+2026-07-02 12:40:29 [INFO] Cluster change summary saved to new_run_cluster_summary.csv
+2026-07-02 12:40:29 [INFO] History updated and saved to new_run_cluster_history.parquet.gz
+2026-07-02 12:40:29 [INFO] Log saved to new_run_cluster_bactraq.log
+2026-07-02 13:28:25 [INFO] BacTraq run started — input: new_run_snpdist.tsv
+2026-07-02 13:28:25 [INFO] Thresholds: [20, 10, 5]
+2026-07-02 13:28:25 [INFO] History file: prev_history.parquet.gz
+2026-07-02 13:28:25 [INFO] Clustering complete — 19 samples
+2026-07-02 13:28:25 [INFO] [20 SNPs] MERGE  clusters [2, 3] -> new cluster 7; members: [s4, s5, s6, s7]
+2026-07-02 13:28:25 [INFO] [20 SNPs] BRIDGED RECLASSIFICATION  [s16] (previously singleton) joined cluster 1; renamed: 1 -> 8; all members: [s1, s16, s2, s3]
+2026-07-02 13:28:25 [INFO] [20 SNPs] SPLIT  cluster 4 (had [s10, s8, s9]) -> new cluster 9: [n1, s10]
+2026-07-02 13:28:25 [INFO] [20 SNPs] NEW  cluster 10: [n2, n3]
+2026-07-02 13:28:25 [INFO] [20 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5 and became singleton(s); remaining members [s12, s13] renamed: 5 -> 11
+2026-07-02 13:28:25 [INFO] [20 SNPs] SPLIT  cluster 4 (had [s10, s8, s9]) -> new cluster 12: [s8, s9]
+2026-07-02 13:28:25 [INFO] [20 SNPs] DISSOLVED  cluster 6: all members [s14, s15] became singletons
+2026-07-02 13:28:25 [INFO] [10 SNPs] CASCADED RENAME  cluster 2.1 -> 7.1 (parent renamed at coarser threshold); members: [s4, s5]
+2026-07-02 13:28:25 [INFO] [10 SNPs] CASCADED RENAME  cluster 3.1 -> 7.2 (parent renamed at coarser threshold); members: [s6, s7]
+2026-07-02 13:28:25 [INFO] [10 SNPs] CASCADED RENAME  cluster 1.1 -> 8.1 (parent renamed at coarser threshold); members: [s1, s2, s3]
+2026-07-02 13:28:25 [INFO] [10 SNPs] SPLIT  cluster 4.1 (had [s10, s8, s9]) -> new cluster 9.1: [n1, s10]
+2026-07-02 13:28:25 [INFO] [10 SNPs] NEW  cluster 10.1: [n2, n3]
+2026-07-02 13:28:25 [INFO] [10 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5.1 and became singleton(s); remaining members [s12, s13] renamed: 5.1 -> 11.1
+2026-07-02 13:28:25 [INFO] [10 SNPs] SPLIT  cluster 4.1 (had [s10, s8, s9]) -> new cluster 12.1: [s8, s9]
+2026-07-02 13:28:25 [INFO] [10 SNPs] DISSOLVED  cluster 6.1: all members [s14, s15] became singletons
+2026-07-02 13:28:25 [INFO] [5 SNPs] CASCADED RENAME  cluster 2.1.1 -> 7.1.1 (parent renamed at coarser threshold); members: [s4, s5]
+2026-07-02 13:28:25 [INFO] [5 SNPs] CASCADED RENAME  cluster 3.1.1 -> 7.2.1 (parent renamed at coarser threshold); members: [s6, s7]
+2026-07-02 13:28:25 [INFO] [5 SNPs] CASCADED RENAME  cluster 1.1.1 -> 8.1.1 (parent renamed at coarser threshold); members: [s1, s2, s3]
+2026-07-02 13:28:25 [INFO] [5 SNPs] SPLIT  cluster 4.1.1 (had [s10, s8, s9]) -> new cluster 9.1.1: [n1, s10]
+2026-07-02 13:28:25 [INFO] [5 SNPs] NEW  cluster 10.1.1: [n2, n3]
+2026-07-02 13:28:25 [INFO] [5 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5.1.1 and became singleton(s); remaining members [s12, s13] renamed: 5.1.1 -> 11.1.1
+2026-07-02 13:28:25 [INFO] [5 SNPs] SPLIT  cluster 4.1.1 (had [s10, s8, s9]) -> new cluster 12.1.1: [s8, s9]
+2026-07-02 13:28:25 [INFO] [5 SNPs] DISSOLVED  cluster 6.1.1: all members [s14, s15] became singletons
+2026-07-02 13:28:25 [INFO] Clusters for new_run_snpdist.tsv saved to new_run_cluster.csv
+2026-07-02 13:28:25 [INFO] Cluster change summary saved to new_run_cluster_summary.csv
+2026-07-02 13:28:25 [INFO] History updated and saved to new_run_cluster_history.parquet.gz
+2026-07-02 13:28:25 [INFO] Log saved to new_run_cluster_bactraq.log
+2026-07-02 13:55:02 [INFO] BacTraq run started — input: new_run_snpdist.tsv
+2026-07-02 13:55:02 [INFO] Thresholds: [20, 10, 5]
+2026-07-02 13:55:02 [INFO] History file: prev_history.parquet.gz
+2026-07-02 13:55:02 [INFO] Clustering complete — 19 samples
+2026-07-02 13:55:02 [INFO] [20 SNPs] MERGE  clusters [2, 3] -> new cluster 7; members: [s4, s5, s6, s7]
+2026-07-02 13:55:02 [INFO] [20 SNPs] BRIDGED RECLASSIFICATION  [s16] (previously singleton) joined cluster 1; renamed: 1 -> 8; all members: [s1, s16, s2, s3]
+2026-07-02 13:55:02 [INFO] [20 SNPs] SPLIT  cluster 4 (had [s10, s8, s9]) -> new cluster 9: [n1, s10]
+2026-07-02 13:55:02 [INFO] [20 SNPs] NEW  cluster 10: [n2, n3]
+2026-07-02 13:55:02 [INFO] [20 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5 and became singleton(s); remaining members [s12, s13] renamed: 5 -> 11
+2026-07-02 13:55:02 [INFO] [20 SNPs] SPLIT  cluster 4 (had [s10, s8, s9]) -> new cluster 12: [s8, s9]
+2026-07-02 13:55:02 [INFO] [20 SNPs] DISSOLVED  cluster 6: all members [s14, s15] became singletons
+2026-07-02 13:55:02 [INFO] [10 SNPs] CASCADED RENAME  cluster 2.1 -> 7.1 (parent renamed at coarser threshold); members: [s4, s5]
+2026-07-02 13:55:02 [INFO] [10 SNPs] CASCADED RENAME  cluster 3.1 -> 7.2 (parent renamed at coarser threshold); members: [s6, s7]
+2026-07-02 13:55:02 [INFO] [10 SNPs] CASCADED RENAME  cluster 1.1 -> 8.1 (parent renamed at coarser threshold); members: [s1, s2, s3]
+2026-07-02 13:55:02 [INFO] [10 SNPs] SPLIT  cluster 4.1 (had [s10, s8, s9]) -> new cluster 9.1: [n1, s10]
+2026-07-02 13:55:02 [INFO] [10 SNPs] NEW  cluster 10.1: [n2, n3]
+2026-07-02 13:55:02 [INFO] [10 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5.1 and became singleton(s); remaining members [s12, s13] renamed: 5.1 -> 11.1
+2026-07-02 13:55:02 [INFO] [10 SNPs] SPLIT  cluster 4.1 (had [s10, s8, s9]) -> new cluster 12.1: [s8, s9]
+2026-07-02 13:55:02 [INFO] [10 SNPs] DISSOLVED  cluster 6.1: all members [s14, s15] became singletons
+2026-07-02 13:55:02 [INFO] [5 SNPs] CASCADED RENAME  cluster 2.1.1 -> 7.1.1 (parent renamed at coarser threshold); members: [s4, s5]
+2026-07-02 13:55:02 [INFO] [5 SNPs] CASCADED RENAME  cluster 3.1.1 -> 7.2.1 (parent renamed at coarser threshold); members: [s6, s7]
+2026-07-02 13:55:02 [INFO] [5 SNPs] CASCADED RENAME  cluster 1.1.1 -> 8.1.1 (parent renamed at coarser threshold); members: [s1, s2, s3]
+2026-07-02 13:55:02 [INFO] [5 SNPs] SPLIT  cluster 4.1.1 (had [s10, s8, s9]) -> new cluster 9.1.1: [n1, s10]
+2026-07-02 13:55:02 [INFO] [5 SNPs] NEW  cluster 10.1.1: [n2, n3]
+2026-07-02 13:55:02 [INFO] [5 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5.1.1 and became singleton(s); remaining members [s12, s13] renamed: 5.1.1 -> 11.1.1
+2026-07-02 13:55:02 [INFO] [5 SNPs] SPLIT  cluster 4.1.1 (had [s10, s8, s9]) -> new cluster 12.1.1: [s8, s9]
+2026-07-02 13:55:02 [INFO] [5 SNPs] DISSOLVED  cluster 6.1.1: all members [s14, s15] became singletons
+2026-07-02 13:55:02 [INFO] Clusters for new_run_snpdist.tsv saved to new_run_cluster.csv
+2026-07-02 13:55:02 [INFO] Cluster change summary saved to new_run_cluster_summary.csv
+2026-07-02 13:55:02 [INFO] History updated and saved to new_run_cluster_history.parquet.gz
+2026-07-02 13:55:02 [INFO] Log saved to new_run_cluster_bactraq.log
+2026-07-02 13:58:36 [INFO] BacTraq run started — input: new_run_snpdist.tsv
+2026-07-02 13:58:36 [INFO] Thresholds: [20, 10, 5]
+2026-07-02 13:58:36 [INFO] History file: prev_history.parquet.gz
+2026-07-02 13:58:36 [INFO] Clustering complete — 19 samples
+2026-07-02 13:58:36 [INFO] [20 SNPs] MERGE  clusters [2, 3] -> new cluster 7; members: [s4, s5, s6, s7]
+2026-07-02 13:58:36 [INFO] [20 SNPs] BRIDGED RECLASSIFICATION  [s16] (previously singleton) joined cluster 1; renamed: 1 -> 8; all members: [s1, s16, s2, s3]
+2026-07-02 13:58:36 [INFO] [20 SNPs] SPLIT  cluster 4 (had [s10, s8, s9]) -> new cluster 9: [n1, s10]
+2026-07-02 13:58:36 [INFO] [20 SNPs] NEW  cluster 10: [n2, n3]
+2026-07-02 13:58:36 [INFO] [20 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5 and became singleton(s); remaining members [s12, s13] renamed: 5 -> 11
+2026-07-02 13:58:36 [INFO] [20 SNPs] SPLIT  cluster 4 (had [s10, s8, s9]) -> new cluster 12: [s8, s9]
+2026-07-02 13:58:36 [INFO] [20 SNPs] DISSOLVED  cluster 6: all members [s14, s15] became singletons
+2026-07-02 13:58:36 [INFO] [10 SNPs] CASCADED RENAME  cluster 2.1 -> 7.1 (parent renamed at coarser threshold); members: [s4, s5]
+2026-07-02 13:58:36 [INFO] [10 SNPs] CASCADED RENAME  cluster 3.1 -> 7.2 (parent renamed at coarser threshold); members: [s6, s7]
+2026-07-02 13:58:36 [INFO] [10 SNPs] CASCADED RENAME  cluster 1.1 -> 8.1 (parent renamed at coarser threshold); members: [s1, s2, s3]
+2026-07-02 13:58:36 [INFO] [10 SNPs] SPLIT  cluster 4.1 (had [s10, s8, s9]) -> new cluster 9.1: [n1, s10]
+2026-07-02 13:58:36 [INFO] [10 SNPs] NEW  cluster 10.1: [n2, n3]
+2026-07-02 13:58:36 [INFO] [10 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5.1 and became singleton(s); remaining members [s12, s13] renamed: 5.1 -> 11.1
+2026-07-02 13:58:36 [INFO] [10 SNPs] SPLIT  cluster 4.1 (had [s10, s8, s9]) -> new cluster 12.1: [s8, s9]
+2026-07-02 13:58:36 [INFO] [10 SNPs] DISSOLVED  cluster 6.1: all members [s14, s15] became singletons
+2026-07-02 13:58:36 [INFO] [5 SNPs] CASCADED RENAME  cluster 2.1.1 -> 7.1.1 (parent renamed at coarser threshold); members: [s4, s5]
+2026-07-02 13:58:36 [INFO] [5 SNPs] CASCADED RENAME  cluster 3.1.1 -> 7.2.1 (parent renamed at coarser threshold); members: [s6, s7]
+2026-07-02 13:58:36 [INFO] [5 SNPs] CASCADED RENAME  cluster 1.1.1 -> 8.1.1 (parent renamed at coarser threshold); members: [s1, s2, s3]
+2026-07-02 13:58:36 [INFO] [5 SNPs] SPLIT  cluster 4.1.1 (had [s10, s8, s9]) -> new cluster 9.1.1: [n1, s10]
+2026-07-02 13:58:36 [INFO] [5 SNPs] NEW  cluster 10.1.1: [n2, n3]
+2026-07-02 13:58:36 [INFO] [5 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5.1.1 and became singleton(s); remaining members [s12, s13] renamed: 5.1.1 -> 11.1.1
+2026-07-02 13:58:36 [INFO] [5 SNPs] SPLIT  cluster 4.1.1 (had [s10, s8, s9]) -> new cluster 12.1.1: [s8, s9]
+2026-07-02 13:58:36 [INFO] [5 SNPs] DISSOLVED  cluster 6.1.1: all members [s14, s15] became singletons
+2026-07-02 13:58:36 [INFO] Clusters for new_run_snpdist.tsv saved to new_run_cluster.csv
+2026-07-02 13:58:36 [INFO] Cluster change summary saved to new_run_cluster_summary.csv
+2026-07-02 13:58:36 [INFO] History updated and saved to new_run_cluster_history.parquet.gz
+2026-07-02 13:58:36 [INFO] Log saved to new_run_cluster_bactraq.log
+2026-07-02 14:05:06 [INFO] BacTraq run started — input: new_run_snpdist.tsv
+2026-07-02 14:05:06 [INFO] Thresholds: [20, 10, 5]
+2026-07-02 14:05:06 [INFO] History file: prev_history.parquet.gz
+2026-07-02 14:05:06 [INFO] Clustering complete — 19 samples
+2026-07-02 14:05:06 [INFO] [20 SNPs] MERGE  clusters [2, 3] -> new cluster 7; members: [s4, s5, s6, s7]
+2026-07-02 14:05:06 [INFO] [20 SNPs] BRIDGED RECLASSIFICATION  [s16] (previously singleton) joined cluster 1; renamed: 1 -> 8; all members: [s1, s16, s2, s3]
+2026-07-02 14:05:06 [INFO] [20 SNPs] SPLIT  cluster 4 (had [s10, s8, s9]) -> new cluster 9: [n1, s10]
+2026-07-02 14:05:06 [INFO] [20 SNPs] NEW  cluster 10: [n2, n3]
+2026-07-02 14:05:06 [INFO] [20 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5 and became singleton(s); remaining members [s12, s13] renamed: 5 -> 11
+2026-07-02 14:05:06 [INFO] [20 SNPs] SPLIT  cluster 4 (had [s10, s8, s9]) -> new cluster 12: [s8, s9]
+2026-07-02 14:05:06 [INFO] [20 SNPs] DISSOLVED  cluster 6: all members [s14, s15] became singletons
+2026-07-02 14:05:06 [INFO] [10 SNPs] CASCADED RENAME  cluster 2.1 -> 7.1 (parent renamed at coarser threshold); members: [s4, s5]
+2026-07-02 14:05:06 [INFO] [10 SNPs] CASCADED RENAME  cluster 3.1 -> 7.2 (parent renamed at coarser threshold); members: [s6, s7]
+2026-07-02 14:05:06 [INFO] [10 SNPs] CASCADED RENAME  cluster 1.1 -> 8.1 (parent renamed at coarser threshold); members: [s1, s2, s3]
+2026-07-02 14:05:06 [INFO] [10 SNPs] SPLIT  cluster 4.1 (had [s10, s8, s9]) -> new cluster 9.1: [n1, s10]
+2026-07-02 14:05:06 [INFO] [10 SNPs] NEW  cluster 10.1: [n2, n3]
+2026-07-02 14:05:06 [INFO] [10 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5.1 and became singleton(s); remaining members [s12, s13] renamed: 5.1 -> 11.1
+2026-07-02 14:05:06 [INFO] [10 SNPs] SPLIT  cluster 4.1 (had [s10, s8, s9]) -> new cluster 12.1: [s8, s9]
+2026-07-02 14:05:06 [INFO] [10 SNPs] DISSOLVED  cluster 6.1: all members [s14, s15] became singletons
+2026-07-02 14:05:06 [INFO] [5 SNPs] CASCADED RENAME  cluster 2.1.1 -> 7.1.1 (parent renamed at coarser threshold); members: [s4, s5]
+2026-07-02 14:05:06 [INFO] [5 SNPs] CASCADED RENAME  cluster 3.1.1 -> 7.2.1 (parent renamed at coarser threshold); members: [s6, s7]
+2026-07-02 14:05:06 [INFO] [5 SNPs] CASCADED RENAME  cluster 1.1.1 -> 8.1.1 (parent renamed at coarser threshold); members: [s1, s2, s3]
+2026-07-02 14:05:06 [INFO] [5 SNPs] SPLIT  cluster 4.1.1 (had [s10, s8, s9]) -> new cluster 9.1.1: [n1, s10]
+2026-07-02 14:05:06 [INFO] [5 SNPs] NEW  cluster 10.1.1: [n2, n3]
+2026-07-02 14:05:06 [INFO] [5 SNPs] SPLIT-TO-SINGLETON  [s11] left cluster 5.1.1 and became singleton(s); remaining members [s12, s13] renamed: 5.1.1 -> 11.1.1
+2026-07-02 14:05:06 [INFO] [5 SNPs] SPLIT  cluster 4.1.1 (had [s10, s8, s9]) -> new cluster 12.1.1: [s8, s9]
+2026-07-02 14:05:06 [INFO] [5 SNPs] DISSOLVED  cluster 6.1.1: all members [s14, s15] became singletons
+2026-07-02 14:05:06 [INFO] Clusters for new_run_snpdist.tsv saved to new_run_cluster.csv
+2026-07-02 14:05:06 [INFO] Cluster change summary saved to new_run_cluster_summary.csv
+2026-07-02 14:05:06 [INFO] History updated and saved to new_run_cluster_history.parquet.gz
+2026-07-02 14:05:06 [INFO] Log saved to new_run_cluster_bactraq.log
