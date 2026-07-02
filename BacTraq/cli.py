@@ -20,11 +20,12 @@ def main():
     parser.add_argument("-o", "--output", required=True, metavar="FILENAME",
                         help="Output base name. Produces <output>.csv and <output>_history.parquet.gz.")
     parser.add_argument("-t", "--threshold", metavar="THRESHOLD",
-                        help="Comma-separated SNP thresholds, largest first.\nE.g: --threshold 20,10,5\nDefault: 20,10,5")
+                        default=','.join(map(str, _DEFAULT_THRESHOLD)),
+                        help="Comma-separated SNP thresholds, largest first.\nE.g: --threshold 20,10,5")
     parser.add_argument("--history", metavar="HISTORY",
                         help="Path to history .parquet.gz from a previous run.\nGenerate with `bactraq-history`. Omit for clustering only.")
     parser.add_argument("--nRef", action='store_false',
-                        help="No Reference sample in the SNP distance matrix.")
+                        help="No Reference sample in the SNP distance matrix. `Reference` is usually included when you run the workflow with Snippy and Snippy-core.")
     parser.add_argument("--summary", action='store_true',
                         help="Also write <output>_summary.csv: a cluster-change table (one row per "
                              "history cluster lineage, Status/New Name per threshold, plus singleton "
@@ -37,10 +38,7 @@ def main():
     _setup_logging(log_file)
     logger.info(f"BacTraq run started — input: {distance_matrix}")
 
-    if args.threshold:
-        snp_thres = sorted(map(int, args.threshold.split(',')), reverse=True)
-    else:
-        snp_thres = _DEFAULT_THRESHOLD
+    snp_thres = sorted(map(int, args.threshold.split(',')), reverse=True)
     logger.info(f"Thresholds: {snp_thres}")
 
     if args.history:
