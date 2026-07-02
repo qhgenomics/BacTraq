@@ -3,23 +3,26 @@ import pandas as pd
 import numpy as np
 import os
 
-from BacTraq.bactraq import (
+from BacTraq.helper import (
     get_name,
     get_parent,
     by_suffix,
     by_last,
-    new_in_first_list,
     increment_tuple_cluster,
+)
+from BacTraq.clustering import (
+    cluster_number_generate,
+    cluster_from_distance_matrix,
+)
+from BacTraq.cluster_trace import (
+    new_in_first_list,
     match_db_cluster,
     intesection_betweet_cluster_dicts,
-    cluster_number_generate,
     detect_singleton_transitions,
     _inject_split_if_affected,
     assign_cluster_database,
-    pretty_name_save,
-    cluster_from_distance_matrix,
 )
-
+from BacTraq.reporting import pretty_name_save
 
 # ---------------------------------------------------------------------------
 # Utility helpers

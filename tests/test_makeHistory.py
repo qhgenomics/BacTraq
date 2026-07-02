@@ -4,7 +4,6 @@ import os
 
 from BacTraq.makeHistory import read_cluster_table, row_str_to_tuple, history_generate
 
-
 # ---------------------------------------------------------------------------
 # row_str_to_tuple
 # ---------------------------------------------------------------------------
