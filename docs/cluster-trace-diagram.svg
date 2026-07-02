@@ -1,0 +1,671 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="2326" viewBox="0 0 1040 2326" font-family="system-ui,-apple-system,Segoe UI,sans-serif">
+  <style>
+    svg text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    :root, svg {
+    --surface-1: #fcfcfb; --page: #f9f9f7; --text-primary:#0b0b0b; --text-secondary:#52514e;
+    --text-muted:#898781; --gridline:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,0.10);
+    --series-new:#2a78d6; --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
+    --chip-fill:#ffffff; --chip-fill-muted:#f2f1ee;
+    }
+    @media (prefers-color-scheme: dark) {
+    :root, svg {
+    --surface-1:#1a1a19; --page:#0d0d0d; --text-primary:#ffffff; --text-secondary:#c3c2b7;
+    --text-muted:#898781; --gridline:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,0.10);
+    --series-new:#3987e5; --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#e66767;
+    --chip-fill:#232322; --chip-fill-muted:#1f1f1e;
+    }
+    }
+  </style>
+  <rect x="0" y="0" width="1040" height="2326" fill="var(--page)"/>
+  <rect x="8" y="8" width="1024" height="2310" rx="14" fill="var(--surface-1)" stroke="var(--border)"/>
+  <text x="24" y="38" font-size="20" font-weight="700" fill="var(--text-primary)">How BacTraq traces and renames clusters based on the previous run
+  </text>
+  <text x="24" y="62" font-size="12.5" fill="var(--text-secondary)">Each run clusters samples independently at every SNP threshold, forming a dot-notation tree. BacTraq then
+  </text>
+  <text x="24" y="79" font-size="12.5" fill="var(--text-secondary)">matches this run's clusters back to the provided history and carries a cluster's name forward across merges,
+  </text>
+  <text x="24" y="96" font-size="12.5" fill="var(--text-secondary)">splits, and singleton departures — instead of a fresh, unrelated number every run.
+  </text>
+  <g font-family="system-ui,-apple-system,Segoe UI,sans-serif">
+    <rect x="20" y="128" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--good)" stroke-width="1.4"/>
+    <path d="M1 6.5 L4.5 10 L11 2" transform="translate(27,131)" fill="none" stroke="var(--good)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="52" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">Consistent
+    </text>
+    <rect x="138" y="128" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--warning)" stroke-width="1.4"/>
+    <path d="M1 6 A5 5 0 1 1 3 9.8 M1 6 L1 2.5 M1 6 L4 6.5" transform="translate(145,131)" fill="none" stroke="var(--warning)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="170" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">Renamed
+    </text>
+    <rect x="236.2" y="128" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--serious)" stroke-width="1.4"/>
+    <path d="M1 6 L5 6 M5 6 L10 1.5 M5 6 L10 10.5" transform="translate(243.2,131)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="268.2" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">Split
+    </text>
+    <rect x="321.2" y="128" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--serious)" stroke-width="1.4"/>
+    <path d="M1 1.5 L6 6 M1 10.5 L6 6 M6 6 L11 6" transform="translate(328.2,131)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="353.2" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">Merge
+    </text>
+    <rect x="406.2" y="128" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--series-new)" stroke-width="1.4"/>
+    <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(413.2,131)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="438.2" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">New
+    </text>
+    <rect x="478" y="128" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--critical)" stroke-width="1.4"/>
+    <path d="M1.5 1.5 L5 5 M10.5 10.5 L7 7 M1.5 10.5 L4 8 M10.5 1.5 L8 4" transform="translate(485,131)" fill="none" stroke="var(--critical)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="510" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">Departed to singleton
+    </text>
+    <rect x="668.6" y="128" width="16" height="16" rx="8" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="690.6" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">Singleton
+    </text>
+  </g>
+  <text x="20" y="158" font-size="11.5" fill="var(--text-muted)">Small gray text under each current-run name is what a history-blind re-clustering pass would have called it — same members, no relationship to history.
+  </text>
+  <line x1="8" y1="200" x2="1032" y2="200" stroke="var(--gridline)" stroke-width="1"/>
+  <text x="18" y="190" font-size="13" font-weight="700" letter-spacing=".02em" fill="var(--text-muted)">20 SNPs
+  </text>
+  <text x="110" y="218" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Previous run
+  </text>
+  <text x="930" y="218" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Current run
+  </text>
+  <line x1="8" y1="890" x2="1032" y2="890" stroke="var(--gridline)" stroke-width="1"/>
+  <text x="18" y="880" font-size="13" font-weight="700" letter-spacing=".02em" fill="var(--text-muted)">10 SNPs
+  </text>
+  <text x="110" y="908" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Previous run
+  </text>
+  <text x="930" y="908" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Current run
+  </text>
+  <line x1="8" y1="1580" x2="1032" y2="1580" stroke="var(--gridline)" stroke-width="1"/>
+  <text x="18" y="1570" font-size="13" font-weight="700" letter-spacing=".02em" fill="var(--text-muted)">5 SNPs
+  </text>
+  <text x="110" y="1598" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Previous run
+  </text>
+  <text x="930" y="1598" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Current run
+  </text>
+  <path d="M 110 266 C 110 596, 110 596, 110 926" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 310 C 110 640, 110 640, 110 970" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 354 C 110 684, 110 684, 110 1014" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 398 C 110 728, 110 728, 110 1058" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 442 C 110 772, 110 772, 110 1102" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 486 C 110 816, 110 816, 110 1146" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 530 C 110 860, 110 860, 110 1190" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 278 C 930 602, 930 602, 930 926" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 332 C 930 656, 930 656, 930 980" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 332 C 930 683, 930 683, 930 1034" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 386 C 930 737, 930 737, 930 1088" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 440 C 930 791, 930 791, 930 1142" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 494 C 930 845, 930 845, 930 1196" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 548 C 930 899, 930 899, 930 1250" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 602 C 930 953, 930 953, 930 1304" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 656 C 930 1007, 930 1007, 930 1358" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 956 C 110 1286, 110 1286, 110 1616" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 1000 C 110 1330, 110 1330, 110 1660" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 1044 C 110 1374, 110 1374, 110 1704" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 1088 C 110 1418, 110 1418, 110 1748" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 1132 C 110 1462, 110 1462, 110 1792" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 1176 C 110 1506, 110 1506, 110 1836" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 110 1220 C 110 1550, 110 1550, 110 1880" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 968 C 930 1292, 930 1292, 930 1616" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 1022 C 930 1346, 930 1346, 930 1670" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 1076 C 930 1400, 930 1400, 930 1724" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 1130 C 930 1454, 930 1454, 930 1778" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 1184 C 930 1508, 930 1508, 930 1832" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 1238 C 930 1562, 930 1562, 930 1886" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 1292 C 930 1616, 930 1616, 930 1940" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 1346 C 930 1670, 930 1670, 930 1994" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 930 1400 C 930 1724, 930 1724, 930 2048" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
+  <path d="M 160 515 C 450.21999999999997 515, 560.78 257, 851 257" fill="none" stroke="var(--good)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 295 C 450.21999999999997 295, 560.78 311, 851 311" fill="none" stroke="var(--serious)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 339 C 450.21999999999997 339, 560.78 311, 851 311" fill="none" stroke="var(--serious)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 251 C 450.21999999999997 251, 560.78 365, 851 365" fill="none" stroke="var(--warning)" stroke-width="3" opacity=".85"/>
+  <path d="M 138 553 C 437.46 553, 551.54 365, 851 365" fill="none" stroke="var(--warning)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 138 577 C 437.46 577, 551.54 419, 851 419" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 138 601 C 437.46 601, 551.54 419, 851 419" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 160 427 C 450.21999999999997 427, 560.78 527, 851 527" fill="none" stroke="var(--serious)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 383 C 450.21999999999997 383, 560.78 581, 851 581" fill="none" stroke="var(--serious)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 383 C 450.21999999999997 383, 560.78 635, 851 635" fill="none" stroke="var(--serious)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 427 C 471.64 427, 590.3599999999999 677, 902 677" fill="none" stroke="var(--critical)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round" opacity=".8"/>
+  <path d="M 160 471 C 471.64 471, 590.3599999999999 701, 902 701" fill="none" stroke="var(--critical)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round" opacity=".8"/>
+  <path d="M 160 471 C 471.64 471, 590.3599999999999 725, 902 725" fill="none" stroke="var(--critical)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round" opacity=".8"/>
+  <path d="M 805 419 C 828 419, 828 419, 851 419" fill="none" stroke="var(--series-new)" stroke-width="3" stroke-dasharray="1 5" opacity=".85"/>
+  <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(799,413)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 805 473 C 828 473, 828 473, 851 473" fill="none" stroke="var(--series-new)" stroke-width="3" stroke-dasharray="1 5" opacity=".85"/>
+  <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(799,467)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 160 1205 C 450.21999999999997 1205, 560.78 947, 851 947" fill="none" stroke="var(--good)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 985 C 450.21999999999997 985, 560.78 1001, 851 1001" fill="none" stroke="var(--warning)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 1029 C 450.21999999999997 1029, 560.78 1055, 851 1055" fill="none" stroke="var(--warning)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 941 C 450.21999999999997 941, 560.78 1109, 851 1109" fill="none" stroke="var(--warning)" stroke-width="3" opacity=".85"/>
+  <path d="M 138 1267 C 437.46 1267, 551.54 1163, 851 1163" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 138 1291 C 437.46 1291, 551.54 1163, 851 1163" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 160 1117 C 450.21999999999997 1117, 560.78 1271, 851 1271" fill="none" stroke="var(--serious)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 1073 C 450.21999999999997 1073, 560.78 1325, 851 1325" fill="none" stroke="var(--serious)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 1073 C 450.21999999999997 1073, 560.78 1379, 851 1379" fill="none" stroke="var(--serious)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 1117 C 471.64 1117, 590.3599999999999 1421, 902 1421" fill="none" stroke="var(--critical)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round" opacity=".8"/>
+  <path d="M 160 1161 C 471.64 1161, 590.3599999999999 1445, 902 1445" fill="none" stroke="var(--critical)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round" opacity=".8"/>
+  <path d="M 160 1161 C 471.64 1161, 590.3599999999999 1469, 902 1469" fill="none" stroke="var(--critical)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round" opacity=".8"/>
+  <path d="M 805 1163 C 828 1163, 828 1163, 851 1163" fill="none" stroke="var(--series-new)" stroke-width="3" stroke-dasharray="1 5" opacity=".85"/>
+  <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(799,1157)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 805 1217 C 828 1217, 828 1217, 851 1217" fill="none" stroke="var(--series-new)" stroke-width="3" stroke-dasharray="1 5" opacity=".85"/>
+  <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(799,1211)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 160 1895 C 450.21999999999997 1895, 560.78 1637, 851 1637" fill="none" stroke="var(--good)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 1675 C 450.21999999999997 1675, 560.78 1691, 851 1691" fill="none" stroke="var(--warning)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 1719 C 450.21999999999997 1719, 560.78 1745, 851 1745" fill="none" stroke="var(--warning)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 1631 C 450.21999999999997 1631, 560.78 1799, 851 1799" fill="none" stroke="var(--warning)" stroke-width="3" opacity=".85"/>
+  <path d="M 138 1957 C 437.46 1957, 551.54 1853, 851 1853" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 138 1981 C 437.46 1981, 551.54 1853, 851 1853" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 160 1807 C 450.21999999999997 1807, 560.78 1961, 851 1961" fill="none" stroke="var(--serious)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 1763 C 450.21999999999997 1763, 560.78 2015, 851 2015" fill="none" stroke="var(--serious)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 1763 C 450.21999999999997 1763, 560.78 2069, 851 2069" fill="none" stroke="var(--serious)" stroke-width="3" opacity=".85"/>
+  <path d="M 160 1807 C 471.64 1807, 590.3599999999999 2111, 902 2111" fill="none" stroke="var(--critical)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round" opacity=".8"/>
+  <path d="M 160 1851 C 471.64 1851, 590.3599999999999 2135, 902 2135" fill="none" stroke="var(--critical)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round" opacity=".8"/>
+  <path d="M 160 1851 C 471.64 1851, 590.3599999999999 2159, 902 2159" fill="none" stroke="var(--critical)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round" opacity=".8"/>
+  <path d="M 805 1853 C 828 1853, 828 1853, 851 1853" fill="none" stroke="var(--series-new)" stroke-width="3" stroke-dasharray="1 5" opacity=".85"/>
+  <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(799,1847)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 805 1907 C 828 1907, 828 1907, 851 1907" fill="none" stroke="var(--series-new)" stroke-width="3" stroke-dasharray="1 5" opacity=".85"/>
+  <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(799,1901)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g>
+    <rect x="60" y="236" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="255" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">1
+    </text>
+    <text x="152" y="255" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="280" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="299" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">2
+    </text>
+    <text x="152" y="299" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="324" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="343" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">3
+    </text>
+    <text x="152" y="343" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="368" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="387" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">4
+    </text>
+    <text x="152" y="387" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="412" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="431" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">5
+    </text>
+    <text x="152" y="431" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="456" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="475" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">6
+    </text>
+    <text x="152" y="475" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="500" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="519" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">7
+    </text>
+    <text x="152" y="519" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="544" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="557" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s16
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="568" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="581" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s17
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="592" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="605" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s18
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="236" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6.5 L4.5 10 L11 2" transform="translate(859,245)" fill="none" stroke="var(--good)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="255" font-size="12.5" font-weight="700" fill="var(--text-primary)">7
+    </text>
+    <text x="999" y="255" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+    <text x="930" y="270" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 8
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="290" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 1.5 L6 6 M1 10.5 L6 6 M6 6 L11 6" transform="translate(859,299)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="309" font-size="12.5" font-weight="700" fill="var(--text-primary)">8
+    </text>
+    <text x="999" y="309" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=4
+    </text>
+    <text x="930" y="324" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 6
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="344" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 A5 5 0 1 1 3 9.8 M1 6 L1 2.5 M1 6 L4 6.5" transform="translate(859,353)" fill="none" stroke="var(--warning)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="363" font-size="12.5" font-weight="700" fill="var(--text-primary)">9
+    </text>
+    <text x="999" y="363" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=4
+    </text>
+    <text x="930" y="378" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 5
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="398" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--series-new)" stroke-width="1.4"/>
+    <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(859,407)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="417" font-size="12.5" font-weight="700" fill="var(--text-primary)">10
+    </text>
+    <text x="999" y="417" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="432" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 7
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="452" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--series-new)" stroke-width="1.4"/>
+    <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(859,461)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="471" font-size="12.5" font-weight="700" fill="var(--text-primary)">11
+    </text>
+    <text x="999" y="471" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="486" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 2
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="506" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 L5 6 M5 6 L10 1.5 M5 6 L10 10.5" transform="translate(859,515)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="525" font-size="12.5" font-weight="700" fill="var(--text-primary)">12
+    </text>
+    <text x="999" y="525" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="540" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 4
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="560" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 L5 6 M5 6 L10 1.5 M5 6 L10 10.5" transform="translate(859,569)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="579" font-size="12.5" font-weight="700" fill="var(--text-primary)">13
+    </text>
+    <text x="999" y="579" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="594" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="614" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 L5 6 M5 6 L10 1.5 M5 6 L10 10.5" transform="translate(859,623)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="633" font-size="12.5" font-weight="700" fill="var(--text-primary)">14
+    </text>
+    <text x="999" y="633" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="648" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 3
+    </text>
+  </g>
+  <g>
+    <rect x="902" y="668" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="930" y="681" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s11
+    </text>
+  </g>
+  <g>
+    <rect x="902" y="692" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="930" y="705" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s14
+    </text>
+  </g>
+  <g>
+    <rect x="902" y="716" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="930" y="729" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s15
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="926" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="945" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">1.1
+    </text>
+    <text x="152" y="945" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="970" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="989" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">2.1
+    </text>
+    <text x="152" y="989" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="1014" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="1033" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">3.1
+    </text>
+    <text x="152" y="1033" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="1058" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="1077" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">4.1
+    </text>
+    <text x="152" y="1077" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="1102" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="1121" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">5.1
+    </text>
+    <text x="152" y="1121" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="1146" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="1165" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">6.1
+    </text>
+    <text x="152" y="1165" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="1190" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="1209" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">7.1
+    </text>
+    <text x="152" y="1209" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="1234" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="1247" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s16
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="1258" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="1271" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s17
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="1282" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="1295" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s18
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="926" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6.5 L4.5 10 L11 2" transform="translate(859,935)" fill="none" stroke="var(--good)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="945" font-size="12.5" font-weight="700" fill="var(--text-primary)">7.1
+    </text>
+    <text x="999" y="945" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+    <text x="930" y="960" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 8.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="980" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 A5 5 0 1 1 3 9.8 M1 6 L1 2.5 M1 6 L4 6.5" transform="translate(859,989)" fill="none" stroke="var(--warning)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="999" font-size="12.5" font-weight="700" fill="var(--text-primary)">8.1
+    </text>
+    <text x="999" y="999" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="1014" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 6.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1034" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 A5 5 0 1 1 3 9.8 M1 6 L1 2.5 M1 6 L4 6.5" transform="translate(859,1043)" fill="none" stroke="var(--warning)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1053" font-size="12.5" font-weight="700" fill="var(--text-primary)">8.2
+    </text>
+    <text x="999" y="1053" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="1068" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 6.2
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1088" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 A5 5 0 1 1 3 9.8 M1 6 L1 2.5 M1 6 L4 6.5" transform="translate(859,1097)" fill="none" stroke="var(--warning)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1107" font-size="12.5" font-weight="700" fill="var(--text-primary)">9.1
+    </text>
+    <text x="999" y="1107" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+    <text x="930" y="1122" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 5.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1142" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--series-new)" stroke-width="1.4"/>
+    <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(859,1151)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1161" font-size="12.5" font-weight="700" fill="var(--text-primary)">10.1
+    </text>
+    <text x="999" y="1161" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="1176" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 7.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1196" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--series-new)" stroke-width="1.4"/>
+    <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(859,1205)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1215" font-size="12.5" font-weight="700" fill="var(--text-primary)">11.1
+    </text>
+    <text x="999" y="1215" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="1230" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 2.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1250" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 L5 6 M5 6 L10 1.5 M5 6 L10 10.5" transform="translate(859,1259)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1269" font-size="12.5" font-weight="700" fill="var(--text-primary)">12.1
+    </text>
+    <text x="999" y="1269" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="1284" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 4.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1304" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 L5 6 M5 6 L10 1.5 M5 6 L10 10.5" transform="translate(859,1313)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1323" font-size="12.5" font-weight="700" fill="var(--text-primary)">13.1
+    </text>
+    <text x="999" y="1323" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="1338" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 1.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1358" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 L5 6 M5 6 L10 1.5 M5 6 L10 10.5" transform="translate(859,1367)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1377" font-size="12.5" font-weight="700" fill="var(--text-primary)">14.1
+    </text>
+    <text x="999" y="1377" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="1392" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 3.1
+    </text>
+  </g>
+  <g>
+    <rect x="902" y="1412" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="930" y="1425" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s11
+    </text>
+  </g>
+  <g>
+    <rect x="902" y="1436" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="930" y="1449" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s14
+    </text>
+  </g>
+  <g>
+    <rect x="902" y="1460" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="930" y="1473" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s15
+    </text>
+  </g>
+  <g>
+    <rect x="902" y="1484" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="930" y="1497" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s16
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="1616" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="1635" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">1.1.1
+    </text>
+    <text x="152" y="1635" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="1660" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="1679" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">2.1.1
+    </text>
+    <text x="152" y="1679" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="1704" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="1723" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">3.1.1
+    </text>
+    <text x="152" y="1723" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="1748" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="1767" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">4.1.1
+    </text>
+    <text x="152" y="1767" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="1792" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="1811" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">5.1.1
+    </text>
+    <text x="152" y="1811" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="1836" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="1855" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">6.1.1
+    </text>
+    <text x="152" y="1855" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+  </g>
+  <g>
+    <rect x="60" y="1880" width="100" height="30" rx="7" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <text x="102" y="1899" font-size="12.5" font-weight="700" fill="var(--text-primary)" text-anchor="middle">7.1.1
+    </text>
+    <text x="152" y="1899" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="1924" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="1937" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s16
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="1948" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="1961" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s17
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="1972" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="1985" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s18
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1616" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6.5 L4.5 10 L11 2" transform="translate(859,1625)" fill="none" stroke="var(--good)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1635" font-size="12.5" font-weight="700" fill="var(--text-primary)">7.1.1
+    </text>
+    <text x="999" y="1635" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+    <text x="930" y="1650" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 8.1.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1670" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 A5 5 0 1 1 3 9.8 M1 6 L1 2.5 M1 6 L4 6.5" transform="translate(859,1679)" fill="none" stroke="var(--warning)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1689" font-size="12.5" font-weight="700" fill="var(--text-primary)">8.1.1
+    </text>
+    <text x="999" y="1689" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="1704" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 6.1.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1724" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 A5 5 0 1 1 3 9.8 M1 6 L1 2.5 M1 6 L4 6.5" transform="translate(859,1733)" fill="none" stroke="var(--warning)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1743" font-size="12.5" font-weight="700" fill="var(--text-primary)">8.2.1
+    </text>
+    <text x="999" y="1743" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="1758" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 6.2.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1778" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 A5 5 0 1 1 3 9.8 M1 6 L1 2.5 M1 6 L4 6.5" transform="translate(859,1787)" fill="none" stroke="var(--warning)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1797" font-size="12.5" font-weight="700" fill="var(--text-primary)">9.1.1
+    </text>
+    <text x="999" y="1797" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=3
+    </text>
+    <text x="930" y="1812" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 5.1.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1832" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--series-new)" stroke-width="1.4"/>
+    <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(859,1841)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1851" font-size="12.5" font-weight="700" fill="var(--text-primary)">10.1.1
+    </text>
+    <text x="999" y="1851" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="1866" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 7.1.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1886" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--series-new)" stroke-width="1.4"/>
+    <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(859,1895)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1905" font-size="12.5" font-weight="700" fill="var(--text-primary)">11.1.1
+    </text>
+    <text x="999" y="1905" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="1920" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 2.1.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1940" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 L5 6 M5 6 L10 1.5 M5 6 L10 10.5" transform="translate(859,1949)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="1959" font-size="12.5" font-weight="700" fill="var(--text-primary)">12.1.1
+    </text>
+    <text x="999" y="1959" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="1974" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 4.1.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="1994" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 L5 6 M5 6 L10 1.5 M5 6 L10 10.5" transform="translate(859,2003)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="2013" font-size="12.5" font-weight="700" fill="var(--text-primary)">13.1.1
+    </text>
+    <text x="999" y="2013" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="2028" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 1.1.1
+    </text>
+  </g>
+  <g>
+    <rect x="851" y="2048" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
+    <path d="M1 6 L5 6 M5 6 L10 1.5 M5 6 L10 10.5" transform="translate(859,2057)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="881" y="2067" font-size="12.5" font-weight="700" fill="var(--text-primary)">14.1.1
+    </text>
+    <text x="999" y="2067" font-size="10" fill="var(--text-secondary)" text-anchor="end">n=2
+    </text>
+    <text x="930" y="2082" font-size="9.5" fill="var(--text-muted)" text-anchor="middle">no trace: 3.1.1
+    </text>
+  </g>
+  <g>
+    <rect x="902" y="2102" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="930" y="2115" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s11
+    </text>
+  </g>
+  <g>
+    <rect x="902" y="2126" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="930" y="2139" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s14
+    </text>
+  </g>
+  <g>
+    <rect x="902" y="2150" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="930" y="2163" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s15
+    </text>
+  </g>
+  <g>
+    <rect x="902" y="2174" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="930" y="2187" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s16
+    </text>
+  </g>
+  <text x="24" y="2312" font-size="11" fill="var(--text-muted)">Worked example from example/prev_clusters.csv → example/new_run_cluster.csv, matching example/new_run_cluster_bactraq.log.
+  </text>
+</svg>
