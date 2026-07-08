@@ -2,7 +2,7 @@
 
 All notable changes to BacTraq are documented in this file.
 
-## [Unreleased]
+## [1.1.0-rc.3] - 2026-07-08
 
 ### Changed
 
