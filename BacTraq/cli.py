@@ -4,7 +4,7 @@ import pandas as pd
 
 from BacTraq.clustering import cluster_from_distance_matrix
 from BacTraq.cluster_trace import assign_cluster_database
-from BacTraq.reporting import _setup_logging, pretty_name_save, pivot_by_lineage
+from BacTraq.reporting import _setup_logging, pretty_name_save, pivot_by_lineage, build_rename_trace
 
 logger = logging.getLogger('bactraq')
 
@@ -27,9 +27,10 @@ def main():
     parser.add_argument("--nRef", action='store_false',
                         help="No Reference sample in the SNP distance matrix. `Reference` is usually included when you run the workflow with Snippy and Snippy-core.")
     parser.add_argument("--summary", action='store_true',
-                        help="Also write <output>_summary.csv: a cluster-change table (one row per "
-                             "history cluster lineage, Status/New Name per threshold, plus singleton "
-                             "samples) comparing this run against --history. No-op without --history.")
+                        help="Also write <output>_summary.xlsx: an 'Events' sheet (one row per history "
+                             "cluster lineage, Status/New Name per threshold, plus singleton samples) and "
+                             "a 'Rename Trace' sheet (one row per sample, Old/New cluster name per "
+                             "threshold) comparing this run against --history. No-op without --history.")
     args = parser.parse_args()
 
     distance_matrix = args.distance_matrix
@@ -63,9 +64,12 @@ def main():
         if change_log:
             changes_df = pd.DataFrame(change_log)
             level_order = list(this_run_cluster.columns)  # coarsest -> finest
-            summary_table = pivot_by_lineage(changes_df, level_order, current_assignments=rename_with_db, history_assignments=db_cluster)
-            summary_file = f"{args.output}_summary.csv"
-            summary_table.to_csv(summary_file)
+            events_table = pivot_by_lineage(changes_df, level_order, current_assignments=rename_with_db, history_assignments=db_cluster)
+            rename_trace_table = build_rename_trace(rename_with_db, db_cluster, level_order)
+            summary_file = f"{args.output}_summary.xlsx"
+            with pd.ExcelWriter(summary_file) as writer:
+                events_table.to_excel(writer, sheet_name='Events')
+                rename_trace_table.to_excel(writer, sheet_name='Rename Trace')
             logger.info(f"Cluster change summary saved to {summary_file}")
         else:
             logger.info("--summary requested but no history comparison was available — skipping")

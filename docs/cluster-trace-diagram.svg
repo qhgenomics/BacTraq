@@ -27,56 +27,61 @@
   <text x="24" y="96" font-size="12.5" fill="var(--text-secondary)">splits, and singleton departures — instead of a fresh, unrelated number every run.
   </text>
   <g font-family="system-ui,-apple-system,Segoe UI,sans-serif">
-    <rect x="20" y="128" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--good)" stroke-width="1.4"/>
-    <path d="M1 6.5 L4.5 10 L11 2" transform="translate(27,131)" fill="none" stroke="var(--good)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="52" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">Consistent
+    <rect x="20" y="118" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--good)" stroke-width="1.4"/>
+    <path d="M1 6.5 L4.5 10 L11 2" transform="translate(27,121)" fill="none" stroke="var(--good)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="52" y="131" font-size="12" font-weight="600" fill="var(--text-secondary)">Consistent
     </text>
-    <rect x="138" y="128" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--warning)" stroke-width="1.4"/>
-    <path d="M1 6 A5 5 0 1 1 3 9.8 M1 6 L1 2.5 M1 6 L4 6.5" transform="translate(145,131)" fill="none" stroke="var(--warning)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="170" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">Renamed
+    <rect x="138" y="118" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--warning)" stroke-width="1.4"/>
+    <path d="M1 6 A5 5 0 1 1 3 9.8 M1 6 L1 2.5 M1 6 L4 6.5" transform="translate(145,121)" fill="none" stroke="var(--warning)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="170" y="131" font-size="12" font-weight="600" fill="var(--text-secondary)">Renamed
     </text>
-    <rect x="236.2" y="128" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--serious)" stroke-width="1.4"/>
-    <path d="M1 6 L5 6 M5 6 L10 1.5 M5 6 L10 10.5" transform="translate(243.2,131)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="268.2" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">Split
+    <rect x="236.2" y="118" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--serious)" stroke-width="1.4"/>
+    <path d="M1 6 L5 6 M5 6 L10 1.5 M5 6 L10 10.5" transform="translate(243.2,121)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="268.2" y="131" font-size="12" font-weight="600" fill="var(--text-secondary)">Split
     </text>
-    <rect x="321.2" y="128" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--serious)" stroke-width="1.4"/>
-    <path d="M1 1.5 L6 6 M1 10.5 L6 6 M6 6 L11 6" transform="translate(328.2,131)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="353.2" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">Merge
+    <rect x="321.2" y="118" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--serious)" stroke-width="1.4"/>
+    <path d="M1 1.5 L6 6 M1 10.5 L6 6 M6 6 L11 6" transform="translate(328.2,121)" fill="none" stroke="var(--serious)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="353.2" y="131" font-size="12" font-weight="600" fill="var(--text-secondary)">Merge
     </text>
-    <rect x="406.2" y="128" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--series-new)" stroke-width="1.4"/>
-    <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(413.2,131)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="438.2" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">New
+    <rect x="406.2" y="118" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--series-new)" stroke-width="1.4"/>
+    <path d="M6 1.5 L6 10.5 M1.5 6 L10.5 6" transform="translate(413.2,121)" fill="none" stroke="var(--series-new)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="438.2" y="131" font-size="12" font-weight="600" fill="var(--text-secondary)">New
     </text>
-    <rect x="478" y="128" width="26" height="18" rx="5" fill="var(--surface-1)" stroke="var(--critical)" stroke-width="1.4"/>
-    <path d="M1.5 1.5 L5 5 M10.5 10.5 L7 7 M1.5 10.5 L4 8 M10.5 1.5 L8 4" transform="translate(485,131)" fill="none" stroke="var(--critical)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="510" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">Departed to singleton
+    <path d="M 478 127 L 504 127" fill="none" stroke="var(--critical)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round" opacity=".8"/>
+    <text x="510" y="131" font-size="12" font-weight="600" fill="var(--text-secondary)">Departed to singleton
     </text>
-    <rect x="668.6" y="128" width="16" height="16" rx="8" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
-    <text x="690.6" y="141" font-size="12" font-weight="600" fill="var(--text-secondary)">Singleton
+    <rect x="668.6" y="118" width="16" height="16" rx="8" fill="var(--chip-fill-muted)" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="690.6" y="131" font-size="12" font-weight="600" fill="var(--text-secondary)">Singleton
+    </text>
+    <rect x="780" y="118" width="16" height="16" rx="8" fill="var(--chip-fill-muted)" stroke="var(--series-new)" stroke-width="1.2" stroke-dasharray="2 2"/>
+    <text x="802" y="131" font-size="12" font-weight="600" fill="var(--text-secondary)">New sample (not in history)
+    </text>
+    <path d="M 20 154 L 46 154" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+    <text x="52" y="158" font-size="12" font-weight="600" fill="var(--text-secondary)">Singleton or new sample joined a cluster
     </text>
   </g>
-  <text x="20" y="158" font-size="11.5" fill="var(--text-muted)">Small gray text under each current-run name is what a history-blind re-clustering pass would have called it — same members, no relationship to history.
+  <text x="20" y="174" font-size="11.5" fill="var(--text-muted)">Small gray text under each current-run name is what a history-blind re-clustering pass would have called it — same members, no relationship to history.
   </text>
   <line x1="8" y1="200" x2="1032" y2="200" stroke="var(--gridline)" stroke-width="1"/>
   <text x="18" y="190" font-size="13" font-weight="700" letter-spacing=".02em" fill="var(--text-muted)">20 SNPs
   </text>
-  <text x="110" y="218" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Previous run
+  <text x="110" y="218" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Previous run <tspan font-weight="400">(n=21)</tspan>
   </text>
-  <text x="930" y="218" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Current run
+  <text x="930" y="218" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Current run <tspan font-weight="400">(n=24)</tspan>
   </text>
   <line x1="8" y1="890" x2="1032" y2="890" stroke="var(--gridline)" stroke-width="1"/>
   <text x="18" y="880" font-size="13" font-weight="700" letter-spacing=".02em" fill="var(--text-muted)">10 SNPs
   </text>
-  <text x="110" y="908" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Previous run
+  <text x="110" y="908" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Previous run <tspan font-weight="400">(n=21)</tspan>
   </text>
-  <text x="930" y="908" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Current run
+  <text x="930" y="908" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Current run <tspan font-weight="400">(n=24)</tspan>
   </text>
   <line x1="8" y1="1580" x2="1032" y2="1580" stroke="var(--gridline)" stroke-width="1"/>
   <text x="18" y="1570" font-size="13" font-weight="700" letter-spacing=".02em" fill="var(--text-muted)">5 SNPs
   </text>
-  <text x="110" y="1598" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Previous run
+  <text x="110" y="1598" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Previous run <tspan font-weight="400">(n=21)</tspan>
   </text>
-  <text x="930" y="1598" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Current run
+  <text x="930" y="1598" font-size="11.5" font-weight="600" fill="var(--text-muted)" text-anchor="middle">Current run <tspan font-weight="400">(n=24)</tspan>
   </text>
   <path d="M 110 266 C 110 596, 110 596, 110 926" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
   <path d="M 110 310 C 110 640, 110 640, 110 970" fill="none" stroke="var(--baseline)" stroke-width="1.4" opacity=".55"/>
@@ -223,6 +228,24 @@
     <text x="110" y="605" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s18
     </text>
   </g>
+  <g>
+    <rect x="82" y="616" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--series-new)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="629" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">n1
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="640" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--series-new)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="653" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">n2
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="664" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--series-new)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="677" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">n3
+    </text>
+  </g>
+  <path d="M 138 625 C 437.46 625, 551.54 581, 851 581" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 138 649 C 437.46 649, 551.54 473, 851 473" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 138 673 C 437.46 673, 551.54 473, 851 473" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
   <g>
     <rect x="851" y="236" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
     <path d="M1 6.5 L4.5 10 L11 2" transform="translate(859,245)" fill="none" stroke="var(--good)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -382,6 +405,24 @@
     <text x="110" y="1295" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s18
     </text>
   </g>
+  <g>
+    <rect x="82" y="1306" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--series-new)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="1319" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">n1
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="1330" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--series-new)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="1343" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">n2
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="1354" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--series-new)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="1367" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">n3
+    </text>
+  </g>
+  <path d="M 138 1315 C 437.46 1315, 551.54 1325, 851 1325" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 138 1339 C 437.46 1339, 551.54 1217, 851 1217" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 138 1363 C 437.46 1363, 551.54 1217, 851 1217" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
   <g>
     <rect x="851" y="926" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
     <path d="M1 6.5 L4.5 10 L11 2" transform="translate(859,935)" fill="none" stroke="var(--good)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -556,6 +597,24 @@
     <text x="110" y="1985" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">s18
     </text>
   </g>
+  <g>
+    <rect x="82" y="1996" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--series-new)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="2009" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">n1
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="2020" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--series-new)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="2033" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">n2
+    </text>
+  </g>
+  <g>
+    <rect x="82" y="2044" width="56" height="18" rx="9" fill="var(--chip-fill-muted)" stroke="var(--series-new)" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="110" y="2057" font-size="10.5" fill="var(--text-secondary)" text-anchor="middle">n3
+    </text>
+  </g>
+  <path d="M 138 2005 C 437.46 2005, 551.54 2015, 851 2015" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 138 2029 C 437.46 2029, 551.54 1907, 851 1907" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
+  <path d="M 138 2053 C 437.46 2053, 551.54 1907, 851 1907" fill="none" stroke="var(--series-new)" stroke-width="3" opacity=".85" stroke-dasharray="6 3"/>
   <g>
     <rect x="851" y="1616" width="158" height="42" rx="8" fill="var(--chip-fill)" stroke="var(--baseline)" stroke-width="1.4"/>
     <path d="M1 6.5 L4.5 10 L11 2" transform="translate(859,1625)" fill="none" stroke="var(--good)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>

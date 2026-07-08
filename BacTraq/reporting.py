@@ -346,6 +346,44 @@ def pivot_by_lineage(changes_df: pd.DataFrame, level_order: list,
     return pivot
 
 
+def build_rename_trace(current_assignments: pd.DataFrame, history_assignments: pd.DataFrame,
+                        level_order: list) -> pd.DataFrame:
+    ''' Build the "Rename Trace" sheet: one row per sample, with an Old/New cluster name
+    column pair per SNP threshold (coarsest first). In the New column, a sample with no
+    cluster this run is marked 'Unclustered'. In the Old column, a sample that was in a
+    previous run but had no cluster is marked 'Unclustered'; a sample absent from the
+    previous run entirely is marked 'New Sample' instead, so the two cases aren't conflated.
+
+    Parameters
+    ----------
+        - current_assignments (pd.DataFrame): This run's per-sample cluster table.
+        - history_assignments (pd.DataFrame): Prior run's per-sample cluster table, or None.
+        - level_order (list): SNP threshold column names, coarsest first.
+
+    Return
+    ------
+        - pd.DataFrame: Indexed by sample id, columns '{level} Old' / '{level} New' per level.
+    '''
+    samples = sorted(current_assignments.index)
+    rows = []
+    for sample in samples:
+        row = {}
+        is_new_sample = history_assignments is None or sample not in history_assignments.index
+        for level in level_order:
+            if is_new_sample:
+                old_name = 'New Sample'
+            else:
+                old_val = history_assignments.loc[sample, level]
+                old_name = get_name(old_val) if old_val is not None else 'Unclustered'
+            new_val = current_assignments.loc[sample, level]
+            row[f'{level} Old'] = old_name
+            row[f'{level} New'] = get_name(new_val) if new_val is not None else 'Unclustered'
+        rows.append(row)
+
+    trace = pd.DataFrame(rows, index=pd.Index(samples, name='Sample'))
+    return trace
+
+
 def pretty_name_save(data: pd.DataFrame, matrix_file: str, name: str) -> None:
     df = pd.DataFrame(index = data.index)
     input_file = os.path.basename(matrix_file)
