@@ -63,8 +63,8 @@ options:
                         Comma-separated SNP thresholds, largest first. E.g: --threshold 20,10,5 (default: 20,10,5)
   --history HISTORY     Path to history .parquet.gz from a previous run. Generate with `bactraq-history`. Omit for clustering only. (default: None)
   --nRef                No Reference sample in the SNP distance matrix. `Reference` is usually included when you run the workflow with Snippy and Snippy-core. (default: True)
-  --summary             Also write <output>_summary.csv: a cluster-change table (one row per history cluster lineage, Status/New Name per threshold, plus singleton samples) comparing
-                        this run against --history. No-op without --history. (default: False)
+  --summary             Also write <output>_summary.xlsx: an 'Events' sheet (one row per history cluster lineage, Status/New Name per threshold, plus singleton samples) and a 'Rename
+                        Trace' sheet (one row per sample, Old/New cluster name per threshold) comparing this run against --history. No-op without --history. (default: False)
 ```
 
 

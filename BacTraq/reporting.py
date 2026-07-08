@@ -346,6 +346,40 @@ def pivot_by_lineage(changes_df: pd.DataFrame, level_order: list,
     return pivot
 
 
+def build_rename_trace(current_assignments: pd.DataFrame, history_assignments: pd.DataFrame,
+                        level_order: list) -> pd.DataFrame:
+    ''' Build the "Rename Trace" sheet: one row per sample, with an Old/New cluster name
+    column pair per SNP threshold (coarsest first). A sample with no cluster at a given
+    level in a run — either because it wasn't clustered, or because it's absent from that
+    run entirely — is marked 'Unclustered'.
+
+    Parameters
+    ----------
+        - current_assignments (pd.DataFrame): This run's per-sample cluster table.
+        - history_assignments (pd.DataFrame): Prior run's per-sample cluster table, or None.
+        - level_order (list): SNP threshold column names, coarsest first.
+
+    Return
+    ------
+        - pd.DataFrame: Indexed by sample id, columns '{level} Old' / '{level} New' per level.
+    '''
+    samples = sorted(current_assignments.index)
+    rows = []
+    for sample in samples:
+        row = {}
+        for level in level_order:
+            old_val = None
+            if history_assignments is not None and sample in history_assignments.index:
+                old_val = history_assignments.loc[sample, level]
+            new_val = current_assignments.loc[sample, level]
+            row[f'{level} Old'] = get_name(old_val) if old_val is not None else 'Unclustered'
+            row[f'{level} New'] = get_name(new_val) if new_val is not None else 'Unclustered'
+        rows.append(row)
+
+    trace = pd.DataFrame(rows, index=pd.Index(samples, name='Sample'))
+    return trace
+
+
 def pretty_name_save(data: pd.DataFrame, matrix_file: str, name: str) -> None:
     df = pd.DataFrame(index = data.index)
     input_file = os.path.basename(matrix_file)

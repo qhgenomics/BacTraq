@@ -4,6 +4,11 @@ All notable changes to BacTraq are documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- `--summary` now writes `<output>_summary.xlsx` instead of a `.csv`, with two sheets: `Events` (the existing per-lineage Status/New Name table) and `Rename Trace` (one row per sample, Old/New cluster name per threshold, coarsest first; singletons marked `Unclustered`).
+- Added `openpyxl` as a dependency (required for Excel output).
+
 ## [1.1.0-rc.2] - 2026-07-02
 
 ### Changed
